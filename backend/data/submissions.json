@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Demo User",
+    "role": "Software Engineer",
+    "percentile": 82,
+    "elo": 1650,
+    "cvScore": 88,
+    "createdAt": "2026-01-10T09:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Product Operator",
+    "role": "Product Manager",
+    "percentile": 74,
+    "elo": 1600,
+    "cvScore": 81,
+    "createdAt": "2026-01-12T15:30:00.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Insight Analyst",
+    "role": "Data Analyst",
+    "percentile": 68,
+    "elo": 1565,
+    "cvScore": 77,
+    "createdAt": "2026-01-14T10:00:00.000Z"
+  }
+]

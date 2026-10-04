@@ -1,0 +1,11 @@
+node_modules/
+.expo/
+.expo-shared/
+.expo-export-check/
+dist/
+web-build/
+ios/
+android/
+.env
+.env.*
+!.env.example

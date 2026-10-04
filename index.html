@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerELO</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero-top">
+          <div>
+            <div class="kicker">CV intelligence</div>
+            <h1>Benchmark your CV against the market</h1>
+          </div>
+          <div class="badge">Role-based ELO ranking</div>
+        </div>
+        <p class="subtitle">
+          Score your profile for a target job, compare your percentile against similar candidates,
+          and get actionable coaching on where to improve for better hiring outcomes.
+        </p>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel form-panel">
+          <form id="cvForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input name="name" id="name" type="text" placeholder="Optional" value="Alicia R." />
+              </div>
+
+              <div class="field">
+                <label for="role">Target role</label>
+                <select name="role" id="role">
+                  <option>Software Engineer</option>
+                  <option>Product Manager</option>
+                  <option>Data Analyst</option>
+                  <option>UX Designer</option>
+                  <option>Sales</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="experience">Years of experience</label>
+                <input name="experience" id="experience" type="number" min="0" max="30" value="5" />
+              </div>
+
+              <div class="field">
+                <label for="location">Location</label>
+                <select name="location" id="location">
+                  <option>Remote</option>
+                  <option>Hybrid</option>
+                  <option>On-site</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="skills">Top skills</label>
+                <input
+                  name="skills"
+                  id="skills"
+                  type="text"
+                  placeholder="e.g. JavaScript, SQL, React, Python"
+                  value="JavaScript, TypeScript, React, Node, SQL, AWS"
+                />
+              </div>
+
+              <div class="field">
+                <label for="education">Education</label>
+                <select name="education" id="education">
+                  <option>Bachelor's</option>
+                  <option>Master's</option>
+                  <option>Bootcamp</option>
+                  <option>High School</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="industry">Industry</label>
+                <select name="industry" id="industry">
+                  <option>Technology</option>
+                  <option>Finance</option>
+                  <option>Healthcare</option>
+                  <option>Consulting</option>
+                  <option>Retail</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="cvSummary">CV summary / achievements</label>
+                <textarea
+                  name="cvSummary"
+                  id="cvSummary"
+                  placeholder="Paste your CV summary or strongest measurable wins..."
+                >Led a product redesign that increased retention by 18%, built internal dashboards with SQL and React, and shipped a customer-facing analytics feature used by 10k users.</textarea>
+              </div>
+            </div>
+
+            <div class="button-row">
+              <button type="submit">Analyze my CV</button>
+              <button type="button" class="secondary" id="demoButton">Load sample profile</button>
+            </div>
+            <p id="formMessage" class="secondary-text">Your profile benchmarks against applicants in this market.</p>
+          </form>
+        </section>
+
+        <aside class="panel result-panel">
+          <div class="score-box">
+            <div class="topline"><span class="ring"></span> <span id="labelValue">Above average</span></div>
+            <div class="score-row">
+              <div class="score" id="percentileValue">78%</div>
+              <div class="score-suffix">percentile</div>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">ELO</span>
+              <span class="metric-value" id="eloValue">1560</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Role match</span>
+              <span class="metric-value" id="roleMatchValue">82% match</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">CV score</span>
+              <span class="metric-value" id="scoreValue">83/100</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Coach prompt</span>
+              <span class="metric-value" id="promptValue">Strong fit</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="section-title">How to improve</p>
+            <ul class="list" id="insightList">
+              <li>Focus on measurable wins and business impact.</li>
+              <li>Align keyword usage to the exact role spec.</li>
+              <li>Highlight ownership moments and leadership outcomes.</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+
+      <section class="panel lower-grid">
+        <div>
+          <p class="section-title">Top talent leaderboard</p>
+          <div id="leaderboard" class="leaderboard"></div>
+        </div>
+
+        <div>
+          <p class="section-title">Skill opportunity map</p>
+          <div id="opportunityCard" class="opportunity-card">
+            <div class="chip-row">
+              <span class="chip">Leadership</span>
+              <span class="chip">Systems thinking</span>
+              <span class="chip">Business impact</span>
+            </div>
+            <ul class="list" id="opportunityList">
+              <li>Add measurable revenue or user outcome improvements.</li>
+              <li>Bring in metrics around product quality and user experience.</li>
+              <li>Emphasise stakeholder influence and execution ownership.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
